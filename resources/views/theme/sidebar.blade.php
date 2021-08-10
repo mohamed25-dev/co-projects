@@ -1,5 +1,5 @@
     <!-- Sidebar -->
-    <ul class="pr-0 navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="pe-0 navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
@@ -13,16 +13,13 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item {{ request()->is('admin') ? 'active' : '' }}">
-        <a class="nav-link text-right" href="#">
+        <a class="nav-link text-right" href="{{route('admin.index')}}">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>لوحة التحكم</span></a>
       </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider">
-
-
-      <!-- Nav Item - Pages Collapse Menu -->
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item {{ request()->is('admin/projects*') ? 'active' : '' }}">

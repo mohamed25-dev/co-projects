@@ -24,7 +24,7 @@
                             <div class="d-flex">
                                 <div class="d-flex align-items-center">
                                     <img src="/images/clock.svg" alt="">
-                                    <div class="mr-2">
+                                    <div class="me-2">
                                         {{ $project->created_at->diffForHumans() }}
                                     </div>
                                 </div>

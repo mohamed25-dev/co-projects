@@ -20,6 +20,12 @@
   @enderror
 </div>
 
+<div class="form-group">
+    <select class="form-control" name="category_id">
+      @include('includes.category_options')
+    </select>
+</div>
+
 <div class="form-group file-area">
   <label for="image">{{ __(' صورة المشروع ') }} </label>
   <input type="file" id="image" accept="image/*" onchange="readCoverImage(this);" name="image"

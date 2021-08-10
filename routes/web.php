@@ -34,12 +34,12 @@ Route::middleware('langauge')->group(function () {
 Route::get('/setlang/{lang}', function ($lang) 
 {
   if ($lang == 'ar' || $lang == 'en') {
-    session(['langauge' => $lang]);
+    session(['lang' => $lang]);
     return redirect()->back();
   }
   
   //Default is Arabic :)
-  session(['langauge' => 'ar']);
+  session(['lang' => 'ar']);
   return redirect()->back();
-});
+})->name('setlang');
 

@@ -25,10 +25,9 @@ class ProjectController extends Controller
     public function list()
     {
         $projects = Project::all();
-        $categories = Category::all();
 
 
-        return view('home', compact('projects', 'categories'));
+        return view('home', compact('projects'));
     }
 
     /**
@@ -54,11 +53,12 @@ class ProjectController extends Controller
             'title' => ['required'],
             'image' => ['required', 'image'],
             'description' => ['required'],
+            'category_id' => ['required'],
         ]);
 
         $image = request('image')->store('images', 'public');
         $data['image'] = $image;
-        $data['user_id'] = 1;
+        $data['user_id'] = auth()->id();
 
         Project::create($data);
         
@@ -112,6 +112,7 @@ class ProjectController extends Controller
         $data = request()->validate([
             'title' => ['required'],
             'description' => ['required'],
+            'category_id' => ['required'],
             'image' => ['image'],
         ]);
 

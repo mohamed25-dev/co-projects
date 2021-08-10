@@ -19,7 +19,7 @@ class CreateProjectsTable extends Migration
             $table->string('image')->default('default.jpeg');
             $table->text('description');
             $table->foreignId('user_id');
-            $table->foreignId('category_id')->nullable();
+            $table->foreignId('category_id');
             $table->timestamps();
 
             $table->foreign('user_id')
