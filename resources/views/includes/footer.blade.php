@@ -1,0 +1,1 @@
+@livewire('news-letter', key($user->id))
