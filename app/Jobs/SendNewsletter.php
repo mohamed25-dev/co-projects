@@ -44,7 +44,7 @@ class SendNewsletter implements ShouldQueue
     {
         $mailsPerJob = env('NUMBER_OF_MAILS_PER_JOB');
         
-        sleep(5);
+        sleep(2);
 
         $customers = Customer::skip($this->index * $mailsPerJob)->take($mailsPerJob)->get();
         foreach ($customers as $customer) {

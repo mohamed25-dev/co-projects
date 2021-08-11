@@ -59,7 +59,9 @@ class NewsletterController extends Controller
             $batch->add(new SendNewsletter($newsletter, $index));
         }
 
-        return redirect()->back()->with(
+        $newsletter->update(['batch_id', $batch->id]);
+        
+        return redirect(route('admin.index'))->with(
             'success',
             'استرخ الآن سنعمل بجد لإيصال النشرة لكل مشتركينا'
         );

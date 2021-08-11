@@ -119,7 +119,7 @@
 
     <!-- Custom scripts for all pages-->
     <script src="{!! asset('theme/js/sb-admin-2.min.js') !!}"></script>
-
+    @livewireScripts
     @yield('script')
 </body>
 
