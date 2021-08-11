@@ -24,6 +24,7 @@ class ProjectFactory extends Factory
         return [
             'title'=> $this->faker->text(50),
             'description'=> $this->faker->text(200),
+            'url'=> $this->faker->url(),
             'user_id' => 1,
             'category_id' => $this->faker->numberBetween(1, 4)
         ];
