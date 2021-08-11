@@ -11,7 +11,7 @@
                         <div class="col-md-8">
                             <div class="card">
                                 <div class="card-header">{{ __(' تفاصيل المشروع ') }}</div>
-                                <img src="{{ asset('storage/images/default.jpeg') }}" class="card-img-top" alt="...">
+                                <img src="{{ asset($project->image) }}" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h4 class="card-title">{{ $project->title }}</h4>
                                     <p class="card-text">{{ Str::limit($project->description, 60) }}</p>

@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Project;
+use App\Traits\ImageTrait;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
+    use ImageTrait;
+
     public function __construct()
     {
         $this->middleware('auth')->except(['list', 'view']);
@@ -56,7 +59,7 @@ class ProjectController extends Controller
             'category_id' => ['required'],
         ]);
 
-        $image = request('image')->store('images', 'public');
+        $image = $this->uploadImage($request->image);
         $data['image'] = $image;
         $data['user_id'] = auth()->id();
 
@@ -117,7 +120,7 @@ class ProjectController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
-            $image = request('image')->store('images', 'public');
+            $image = $this->uploadImage($request->image);
             $data['image'] = $image;
         }
 

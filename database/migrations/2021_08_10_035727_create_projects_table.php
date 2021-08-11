@@ -16,7 +16,7 @@ class CreateProjectsTable extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('image')->default('default.jpeg');
+            $table->string('image')->default('default.jpg');
             $table->text('description');
             $table->foreignId('user_id');
             $table->foreignId('category_id');
@@ -30,7 +30,7 @@ class CreateProjectsTable extends Migration
             $table->foreign('category_id')
             ->references('id')
             ->on('categories')
-            ->onDelete('set null');
+            ->onDelete('cascade');
         });
     }
 

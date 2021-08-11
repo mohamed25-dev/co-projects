@@ -10,7 +10,7 @@
                 <div class="col-sm-6 col-md-4 mt-3">
                     <div class="card">
                         <a href="{{ route('projects.show', $project->id) }}">
-                            <img src="{{ asset('storage/images/default.jpeg') }}" class="card-img-top" alt="...">
+                            <img src="{{ asset($project->image) }}" class="card-img-top" alt="...">
                         </a>
                         <div class="card-body">
                             <a href="{{ route('projects.show', $project->id) }}">
