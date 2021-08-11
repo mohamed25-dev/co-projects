@@ -19,10 +19,10 @@
                         <img src="{{ asset('storage/images/default.jpeg') }}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h4 class="card-title">{{ $project->title }}</h4>
-                            <p class="card-text">{{ Str::limit($project->description, 60) }}</p>
-                            <div class="pt-4">
-                                <a href="#" class="btn btn-primary ">{{ __(' رابط المشروع ') }}</a>
-                            </div>
+                            <p class="card-text">{{ Str::limit($project->description, 360) }}</p>
+                            <a href="{{$project->url}}" rel="nofollow" class="btn btn-primary" target="_blank">
+                                <i class="fa fa-fw fa-link"></i> {{ __(' رابط المشروع ') }}
+                            </a>
                         </div>
                     </div>
                 </div>

@@ -2,17 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\SendNewsletter;
+use App\Models\Customer;
 use App\Models\Newsletter;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Bus;
+
 
 class NewsletterController extends Controller
 {
-
+    
     public function __construct()
     {
         $this->middleware('auth');
     }
-    
+
     public function index()
     {
         $newsletters = Newsletter::all();
@@ -37,6 +41,8 @@ class NewsletterController extends Controller
      */
     public function store(Request $request)
     {
+        $mailsPerJob = env('NUMBER_OF_MAILS_PER_JOB');
+
         $data = request()->validate([
             'title' => ['required'],
             'body' => ['required'],
@@ -44,8 +50,15 @@ class NewsletterController extends Controller
 
         $data['user_id'] = 1;
 
-        Newsletter::create($data);
-        
+        $newsletter = Newsletter::create($data);
+
+        $numberOfJobs = ceil(Customer::count() / $mailsPerJob);
+        $batch = Bus::batch([])->dispatch();
+
+        for ($index = 0; $index < $numberOfJobs; $index++) {
+            $batch->add(new SendNewsletter($newsletter, $index));
+        }
+
         return redirect()->back()->with(
             'success',
             'استرخ الآن سنعمل بجد لإيصال النشرة لكل مشتركينا'
@@ -91,7 +104,7 @@ class NewsletterController extends Controller
         $data['user_id'] = 1;
 
         $newsletter->update($data);
-        
+
         return redirect()->back()->with(
             'success',
             '  عُدلت بيانات النشرة بنجاح'
