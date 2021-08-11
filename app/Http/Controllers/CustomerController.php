@@ -93,8 +93,15 @@ class CustomerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Customer $customer)
     {
-        //
+        $customer->delete();
+    }
+
+    public function unsubscribe($email)
+    {   
+        $customer = Customer::where('email', $email)->firstOrFail();
+        
+        return view('customer.unsubscribe', compact('customer'));
     }
 }

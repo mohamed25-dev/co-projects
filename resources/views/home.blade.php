@@ -33,16 +33,10 @@
                     </div>
                 </div>
             @empty
-                <div class="col-md-7 mx-auto pt-4">
-                    <div class="alert alert-primary col-md-11 mx-auto" role="alert">
+                    <div class="alert alert-primary mx-auto" role="alert">
                         {{ __('No Projects on the category for now, join our news letter to find out once we add them') }}
                         {{-- لا يوجد مشاريع ضمن هذا التصنيف , سيتم إضافتها قريبا --}}
                     </div>
-                    <div class="col-md-12 mx-auto pt-3">
-                        @livewire('news-letter', key($user->id))
-
-                    </div>
-                </div>
 
             @endforelse
         </div>

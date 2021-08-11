@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Events\CustomerSubscribed;
 use App\Models\Customer;
 use Livewire\Component;
 
@@ -27,8 +28,11 @@ class NewsLetter extends Component
            return $this->response_message = __("Your are already a member of our family 😉 ");
         }
 
-        Customer::create($validatedData);
+        $customer = Customer::create($validatedData);
         
+        $lang = request()->session()->get('lang', 'ar');
+        CustomerSubscribed::dispatch($customer, $lang);
+
         $this->first_name = null;
         $this->email = null;
 

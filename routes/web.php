@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Livewire\NewsLetter;
@@ -29,6 +30,10 @@ Route::middleware('langauge')->group(function () {
   });
   
   Route::get('/category/{category}', [CategoryController::class, 'show'])->name('category.show');
+
+  Route::get('/customers/unsubscribe/{email}', [CustomerController::class, 'unsubscribe'])->name('customers.unsubscribe');
+  Route::delete('/customers/{customer}', [CustomerController::class, 'destroy'])->name('customers.destroy');
+
 });
 
 Route::get('/setlang/{lang}', function ($lang) 

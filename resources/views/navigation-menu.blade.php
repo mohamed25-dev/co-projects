@@ -114,11 +114,11 @@
                         {{ __('login') }}
                     </x-jet-nav-link>
                     @if (request()->session()->get('lang', 'ar') == 'en')
-                        <x-jet-nav-link href="setlang/ar" :active="request()->routeIs('login')">
+                        <x-jet-nav-link href="{{route('setlang', 'ar')}}" :active="request()->routeIs('login')">
                             {{ __('بالعربي') }}
                         </x-jet-nav-link>
                     @else
-                        <x-jet-nav-link href="setlang/en" :active="request()->routeIs('login')">
+                        <x-jet-nav-link href="{{route('setlang', 'en')}}" :active="request()->routeIs('login')">
                             {{ __('In English') }}
                         </x-jet-nav-link>
                     @endif
