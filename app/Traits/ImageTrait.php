@@ -7,8 +7,8 @@ use Intervention\Image\ImageManagerStatic as Image;
 trait ImageTrait
 {
   protected $imagePath = 'app/public/images';
-  protected $imageHeight = 320;
-  protected $imageWidth = 420;
+  protected $imageHeight = 420;
+  protected $imageWidth = 520;
 
   public function uploadImage($img)
   {

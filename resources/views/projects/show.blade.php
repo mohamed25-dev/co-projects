@@ -8,15 +8,21 @@
             <div class="container">
                 <div class="py-8">
                     <div class="row justify-content-center">
-                        <div class="col-md-8">
+                        <div class="col-md-6">
                             <div class="card">
-                                <div class="card-header">{{ __(' تفاصيل المشروع ') }}</div>
-                                <img src="{{ asset($project->image) }}" class="card-img-top" alt="...">
+                                <div class="card-header mx-auto">{{ __(' تفاصيل المشروع ') }}</div>
+                                <a href="">
+                                    <img src="{{ asset($project->image) }}" class="card-img-top" alt="...">
+                                </a>
                                 <div class="card-body">
-                                    <h4 class="card-title">{{ $project->title }}</h4>
-                                    <p class="card-text">{{ Str::limit($project->description, 60) }}</p>
-                                    <div class="pt-4">
-                                        <a href="#" class="btn btn-primary ">{{ __(' رابط المشروع ') }}</a>
+                                    <h3 class="card-title"><strong>{{ $project->title }}</strong></h3>
+                                    <p class="card-text">{{ Str::limit($project->description, 360) }}</p>
+                                    <div class="row pt-4">
+                                        <div class="mx-auto pt-4">
+                                            <a href="{{$project->url}}" rel="nofollow" class="btn btn-primary" target="_blank">
+                                                <i class="fa fa-fw fa-link"></i> {{ __(' رابط المشروع ') }}
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

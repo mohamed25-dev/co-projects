@@ -21,12 +21,24 @@
 </div>
 
 <div class="form-group">
-    <select class="form-control" name="category_id">
+  <label for="url">{{ __('  رابط المشروع ') }}</label>
+  <input type="text" id="url" name="title" value="{{ $project->url ?? ''}}"
+      class="form-control @error('url') is-invalid @enderror">
+  @error('url')
+      <span class="invalid-feedback">
+          <strong>{{ $message }}</strong>
+      </span>
+  @enderror
+</div>
+
+<div class="form-group">
+    <label for="category">{{ __('  تصنيف المشروع ') }}</label>
+    <select class="form-control" name="category_id" id="category">
       @include('includes.category_options')
     </select>
 </div>
 
-<div class="form-group file-area">
+<div class="form-group file-area pt-1">
   <label for="image">{{ __(' صورة المشروع ') }} </label>
   <input type="file" id="image" accept="image/*" onchange="readCoverImage(this);" name="image"
       class="form-control @error('image') is-invalid @enderror">
