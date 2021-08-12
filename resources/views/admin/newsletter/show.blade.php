@@ -18,7 +18,7 @@
                         <div class="card-header">{{ __(' تفاصيل النشرة البريدية ') }}</div>
                         <div class="card-body">
                             <h4 class="card-title">{{ $newsletter->title }}</h4>
-                            <p class="card-text">{{ Str::limit($newsletter->body, 60) }}</p>
+                            <p class="card-text">{{$newsletter->body, 60}}</p>
                         </div>
                     </div>
                 </div>
