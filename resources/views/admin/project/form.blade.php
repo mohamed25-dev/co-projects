@@ -23,6 +23,7 @@
 <div class="form-group">
   <label for="url">{{ __('  رابط المشروع ') }}</label>
   <input type="text" id="url" name="title" value="{{ $project->url ?? ''}}" name="url"
+  value="{{ $project->url ?? ''}}
       class="form-control @error('url') is-invalid @enderror">
   @error('url')
       <span class="invalid-feedback">
