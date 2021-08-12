@@ -23,7 +23,7 @@
                         <th>{{ __('الحالة ') }}</th>
                         <th>{{ __('عرض ') }}</th>
                         <th>{{ __('تعديل') }}</th>
-                        <th>{{ __('حذف') }}</th>
+                        <th>{{ __('الغاء') }}</th>
 
                     </tr>
                 </thead>
@@ -46,13 +46,7 @@
                                         class="fa fa-edit"></i> </a>
                             </td>
                             <td>
-                                <form class="inline-form" method="POST"
-                                    action="{{ route('admin.newsletters.destroy',$newsletter) }}" style="display:inline-block">
-                                    @method('delete')
-                                    @csrf
-                                    <button type="submit" class="btn btn-danger btn-sm"
-                                        onclick="return confirm('هل أنت متأكد؟')"><i class="fa fa-trash"></i> </button>
-                                </form>
+                                @livewire('cancel-newsletter', ['batch_id' => $newsletter->batch_id], key($newsletter->id))
                             </td>
                         </tr>
                     @endforeach
