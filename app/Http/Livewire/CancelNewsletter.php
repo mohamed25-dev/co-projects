@@ -15,6 +15,10 @@ class CancelNewsletter extends Component
     {
         if ($this->batch_id) {
             $batch = $this->getBatch($this->batch_id);
+            if ($batch->pendingJobs < 1) {
+                return;
+            }
+            
             $batch->cancel();
         }
     }

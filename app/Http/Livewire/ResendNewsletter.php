@@ -21,7 +21,7 @@ class ResendNewsletter extends Component
         if ($this->batch_id) {
 
             DB::table('job_batches')->where('id', '=', $this->batch_id)->update(
-                ['cancelled_at' => null]
+                ['cancelled_at' => null, 'failed_jobs' => 0, 'failed_job_ids' => []]
             );
 
             $newsletter = Newsletter::where('batch_id', $this->batch_id)->first();

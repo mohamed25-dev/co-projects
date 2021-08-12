@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Mail\NewsletterEmail;
 use App\Models\Customer;
 use App\Models\Newsletter;
 use Illuminate\Bus\Batchable;
@@ -62,9 +63,8 @@ class SendNewsletter implements ShouldQueue
                 continue;
             }
 
-            Mail::raw($this->newsletter->body, function ($message) use ($customer){
-                $message->to($customer->email)->subject($this->newsletter->title);
-            });
+            Mail::to($customer->email)
+            ->send(new NewsletterEmail($customer, $this->newsletter));
 
             $this->newsletter->customers()->attach($customer->id);
         }
