@@ -13,7 +13,7 @@
     <a class="btn btn-primary" href="{{ route('admin.projects.create') }}"><i class="fas fa-plus px-2"></i>{{__('إضافة مشروع جديد')}}</a>
     <hr>
     <div class="row">
-        <div class="col-md-10">
+        <div class="col-md-12">
             <table id="books-table" class="table table-stribed text-right" width="100%" cellspacing="0">
                 <thead>
                     <tr>
