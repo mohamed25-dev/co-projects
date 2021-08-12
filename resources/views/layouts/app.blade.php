@@ -29,7 +29,7 @@
 
 </head>
 
-<body class="font-sans antialiased" {{ $dir == '' ? 'style="text-align: right"' : '' }}  dir="{{ $dir }}">
+<body class="font-sans antialiased" {{ $dir == 'rtl' ? 'style=text-align:right;' : '' }}  dir="{{ $dir }}">
     <x-jet-banner />
 
     <div class="min-h-screen bg-gray-100">
