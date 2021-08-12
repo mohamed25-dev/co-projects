@@ -9,4 +9,9 @@ class Customer extends Model
 {
     use HasFactory;
     protected $fillable = ['email', 'first_name'];
+
+    public function newsletters ()
+    {
+        return $this->belongsToMany(Newsletter::class);
+    }
 }

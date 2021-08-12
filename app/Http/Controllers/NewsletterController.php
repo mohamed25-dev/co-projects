@@ -42,7 +42,7 @@ class NewsletterController extends Controller
      */
     public function store(Request $request)
     {
-        $mailsPerJob = env('NUMBER_OF_MAILS_PER_JOB');
+        $mailsPerJob = env('NUMBER_OF_MAILS_PER_JOB', 25);
 
         $data = request()->validate([
             'title' => ['required'],

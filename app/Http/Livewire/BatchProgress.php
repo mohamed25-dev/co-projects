@@ -29,7 +29,7 @@ class BatchProgress extends Component
         if ($this->batch_id) {
             $pendingPatch = DB::table('job_batches')->where('id', '=', $this->batch_id)->first();
             $batch = Bus::findBatch($pendingPatch->id);
-            $this->cancelled = $batch->cancelled();
+            $this->cancelled = $batch->cancelled() && $batch->finished();
             $this->failed = $batch->failedJobs > 0 ? true : false;
             $this->progress = $batch->progress();
             $this->finished = $batch->finished();

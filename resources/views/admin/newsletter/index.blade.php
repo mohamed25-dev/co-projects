@@ -22,7 +22,7 @@
                         <th>{{ __('تاريخ الإرسال ') }}</th>
                         <th>{{ __('الحالة ') }}</th>
                         <th>{{ __('عرض ') }}</th>
-                        <th>{{ __('تعديل') }}</th>
+                        <th>{{ __('إعادة إرسال') }}</th>
                         <th>{{ __('الغاء') }}</th>
 
                     </tr>
@@ -42,9 +42,9 @@
                                         class="fa fa-eye"></i> </a>
                             </td>
                             <td>
-                                <a class="btn btn-info btn-sm" href="{{ route('admin.newsletters.edit',$newsletter) }}"><i
-                                        class="fa fa-edit"></i> </a>
+                                @livewire('resend-newsletter', ['batch_id' => $newsletter->batch_id])
                             </td>
+                        
                             <td>
                                 @livewire('cancel-newsletter', ['batch_id' => $newsletter->batch_id], key($newsletter->id))
                             </td>

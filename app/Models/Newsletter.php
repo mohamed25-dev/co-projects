@@ -9,4 +9,9 @@ class Newsletter extends Model
 {
     use HasFactory;
     protected $fillable = ['title', 'body', 'user_id', 'batch_id'];
+
+    public function customers ()
+    {
+        return $this->belongsToMany(Customer::class);
+    }
 }
