@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\NewsLetter;
+use App\Models\Newsletter;
 use App\Models\Customer;
 use App\Models\Project;
 class AdminController extends Controller
@@ -11,7 +11,7 @@ class AdminController extends Controller
     {
         $numberOfProjects = Project::count();
         $numberOfSubscribers = Customer::count();
-        $numberOfNewsletters = NewsLetter::count();
+        $numberOfNewsletters = Newsletter::count();
 
         return view('admin.index', compact(
             'numberOfProjects',

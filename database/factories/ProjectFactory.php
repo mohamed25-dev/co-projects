@@ -22,8 +22,8 @@ class ProjectFactory extends Factory
     public function definition()
     {
         return [
-            'title'=> $this->faker->text(50),
-            'description'=> $this->faker->text(200),
+            'title'=> $this->faker->realText(30),
+            'description'=> $this->faker->realText(360),
             'url'=> $this->faker->url(),
             'user_id' => 1,
             'category_id' => $this->faker->numberBetween(1, 4)
