@@ -7,7 +7,8 @@ use App\Models\Customer;
 use App\Models\Newsletter;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Bus;
-
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class NewsletterController extends Controller
 {
@@ -19,7 +20,7 @@ class NewsletterController extends Controller
 
     public function index()
     {
-        $newsletters = Newsletter::all();
+        $newsletters = Newsletter::all()->sortByDesc('created_at');
         return view('admin.newsletter.index', compact('newsletters'));
     }
 
@@ -48,20 +49,29 @@ class NewsletterController extends Controller
             'body' => ['required'],
         ]);
 
-        $data['user_id'] = 1;
+        $runningBatch = DB::table('job_batches')->where('finished_at', '=', null)->first();
+        if ($runningBatch) {
+            return redirect(route('admin.newsletters.index'))->with(
+                'error',
+                'كن صبوراًريثما ننهي إرسال النشرة السابقة '
+            );
+        }
+
+        $batch = Bus::batch([])->dispatch();
+
+        $data['user_id'] = auth()->id();
+        $data['batch_id'] = $batch->id;
 
         $newsletter = Newsletter::create($data);
 
         $numberOfJobs = ceil(Customer::count() / $mailsPerJob);
-        $batch = Bus::batch([])->dispatch();
 
         for ($index = 0; $index < $numberOfJobs; $index++) {
             $batch->add(new SendNewsletter($newsletter, $index));
         }
 
-        $newsletter->update(['batch_id', $batch->id]);
         
-        return redirect(route('admin.index'))->with(
+        return redirect(route('admin.newsletters.index'))->with(
             'success',
             'استرخ الآن سنعمل بجد لإيصال النشرة لكل مشتركينا'
         );

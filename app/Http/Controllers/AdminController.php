@@ -17,26 +17,13 @@ class AdminController extends Controller
         $numberOfSubscribers = Customer::count();
         $numberOfNewsletters = NewsLetter::count();
 
-        $progress = null;
-        $pendingPatch = DB::table('job_batches')->where('finished_at', '=', null)->first();
-        if ($pendingPatch) {
-            $batch = Bus::findBatch($pendingPatch->id);
-            $progress = $batch->progress();
-        }
+        $newsletter = NewsLetter::latest()->first();
 
         return view('admin.index', compact(
             'numberOfProjects',
             'numberOfSubscribers',
             'numberOfNewsletters',
-            'progress'
         ));
     }
 
-    public function getPendingBatch ()
-    {
-        $batch = DB::table('job_batches')->where('pending_jobs', '>', 0)->first();
-        if ($batch) {
-            $progress = $batch->progress();
-        }
-    }
 }
