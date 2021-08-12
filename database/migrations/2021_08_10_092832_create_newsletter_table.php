@@ -18,7 +18,7 @@ class CreateNewsletterTable extends Migration
             $table->string('title');
             $table->text('body');
             $table->foreignId('user_id');
-            $table->unsignedBigInteger('batch_id')->nullable();
+            $table->string('batch_id')->nullable();
             $table->boolean('sent')->default(false);
             $table->timestamps();
 

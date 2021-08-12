@@ -20,6 +20,7 @@
                         <th>{{ __('العنوان ') }}</th>
                         <th>{{ __('النص ') }}</th>
                         <th>{{ __('تاريخ الإرسال ') }}</th>
+                        <th>{{ __('الحالة ') }}</th>
                         <th>{{ __('عرض ') }}</th>
                         <th>{{ __('تعديل') }}</th>
                         <th>{{ __('حذف') }}</th>
@@ -33,7 +34,9 @@
                             <td>{{$newsletter->title }}</td>
                             <td>{{Str::limit($newsletter->body , 100)}}</td>
                             <td>{{$newsletter->created_at->shortRelativeDiffForHumans() }}</td>
-
+                            <td>
+                                @livewire('batch-progress', ['batch_id' => $newsletter->batch_id], key($newsletter->batch_id))
+                            </td>
                             <td>
                                 <a class="btn btn-info btn-sm" href="{{ route('admin.newsletters.show',$newsletter) }}"><i
                                         class="fa fa-eye"></i> </a>
