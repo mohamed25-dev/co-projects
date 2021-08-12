@@ -35,3 +35,7 @@ input[type=file] + .input-title {
 .card .card-icons {
   position: relative;
 }
+
+ar-text {
+  text-align: right !important;
+}
