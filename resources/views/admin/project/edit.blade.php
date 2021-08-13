@@ -5,7 +5,7 @@
 @endsection
 
 @section('heading')
-    {{__('تعديل بيانات المشروع')}}
+    {{__('Edit Project Details')}}
 @endsection
 
 
@@ -14,7 +14,7 @@
         <div class="row justify-content-center mt-3">
             <div class="card mb-2 col-md-8">
                 <div class="card-header text-center">
-                    {{ __('تعديل بيانات المشروع') }}
+                    {{ __('Edit Project Details') }}
                 </div>
 
                 <div class="card-body">
@@ -26,7 +26,7 @@
                         @include('admin.project.form')
                         <div class="form-group row mt-4">
                             <div class="col-md-4">
-                                <button type="submit" class="btn btn-primary">{{ __('تعديل') }}</button>
+                                <button type="submit" class="btn btn-primary">{{ __('Edit') }}</button>
                             </div>
                         </div>
 

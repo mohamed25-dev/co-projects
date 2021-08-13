@@ -5,7 +5,7 @@
 @endsection
 
 @section('heading')
-    {{ __('إضافة مشروع جديد') }}
+    {{ __('Add New Project') }}
 @endsection
 
 
@@ -14,7 +14,7 @@
         <div class="row justify-content-center mt-3">
             <div class="card mb-2 col-md-8">
                 <div class="card-header text-center">
-                    {{ __('إضافة مشروع جديد') }}
+                    {{ __('Add New Project') }}
                 </div>
 
                 <div class="card-body">
@@ -25,7 +25,7 @@
 
                         <div class="form-group row mt-4">
                             <div class="col-md-4">
-                                <button type="submit" class="btn btn-primary">{{ __(' أضف المشروع') }}</button>
+                                <button type="submit" class="btn btn-primary">{{ __('Add Project') }}</button>
                             </div>
                         </div>
 

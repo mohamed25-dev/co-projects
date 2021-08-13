@@ -5,23 +5,23 @@
 @endsection
 
 @section('heading')
-    {{__('عرض المشاريع')}}
+    {{__('Project List')}}
 @endsection
 
 
 @section('content')
-    <a class="btn btn-primary" href="{{ route('admin.projects.create') }}"><i class="fas fa-plus px-2"></i>{{__('إضافة مشروع جديد')}}</a>
+    <a class="btn btn-primary" href="{{ route('admin.projects.create') }}"><i class="fas fa-plus px-2"></i>{{__('Add New Project')}}</a>
     <hr>
     <div class="row">
         <div class="col-md-12">
             <table id="books-table" class="table table-stribed " width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>{{ __('عنوان المشروع') }}</th>
-                        <th>{{ __('المشروع وصف') }}</th>
-                        <th>{{ __('عرض ') }}</th>
-                        <th>{{ __('تعديل') }}</th>
-                        <th>{{ __('حذف') }}</th>
+                        <th>{{ __('Project Title') }}</th>
+                        <th>{{ __('Project Description') }}</th>
+                        <th>{{ __('Show') }}</th>
+                        <th>{{ __('Edit') }}</th>
+                        <th>{{ __('Delete') }}</th>
 
                     </tr>
                 </thead>
@@ -46,7 +46,7 @@
                                     @method('delete')
                                     @csrf
                                     <button type="submit" class="btn btn-danger btn-sm"
-                                        onclick="return confirm('هل أنت متأكد؟')"><i class="fa fa-trash"></i> </button>
+                                        onclick="return confirm('Are You Sure ?')"><i class="fa fa-trash"></i> </button>
                                 </form>
                             </td>
                         </tr>

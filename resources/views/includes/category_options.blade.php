@@ -1,4 +1,4 @@
-<option selected>اختر التصنيف المناسب</option>
+<option selected>{{__('Project Category')}}</option>
 @if(!isset($project))
     @foreach($categories as $category)
         <option value="{{$category->id}}"> {{$category->name}} </option>
