@@ -24,6 +24,7 @@
   <label for="url">{{ __('Project Link') }}</label>
   <input type="text" id="url" name="title" value="{{ $project->url ?? ''}}"
       class="form-control @error('url') is-invalid @enderror">
+
   @error('url')
       <span class="invalid-feedback">
           <strong>{{ $message }}</strong>

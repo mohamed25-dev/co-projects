@@ -55,6 +55,7 @@ class ProjectController extends Controller
         $data = request()->validate([
             'title' => ['required'],
             'image' => ['required', 'image'],
+            'url' => ['required'],
             'description' => ['required'],
             'category_id' => ['required'],
         ]);

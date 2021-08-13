@@ -31,8 +31,8 @@
                 <tbody>
                     @foreach ($newsletters as$newsletter)
                         <tr>
-                            <td>{{$newsletter->title }}</td>
-                            <td>{{Str::limit($newsletter->body , 30)}}</td>
+                            <td>{{Str::limit($newsletter->title , 10 )}}</td>
+                            <td>{{Str::limit($newsletter->body , 25)}}</td>
                             <td>{{$newsletter->created_at->shortRelativeDiffForHumans() }}</td>
                             <td>
                                 @livewire('batch-progress', ['batch_id' => $newsletter->batch_id], key($newsletter->batch_id))
