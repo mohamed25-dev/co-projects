@@ -5,7 +5,7 @@
 @endsection
 
 @section('heading')
-    {{ __('إضافة نشرة بريدية جديدة') }}
+    {{ __('Add Newsletter') }}
 @endsection
 
 
@@ -14,7 +14,7 @@
         <div class="row justify-content-center mt-3">
             <div class="card mb-2 col-md-8">
                 <div class="card-header text-center">
-                    {{ __('إضافة نشرة بريدية جديدة') }}
+                    {{ __('Add Newsletter') }}
                 </div>
 
                 <div class="card-body">
@@ -25,7 +25,7 @@
 
                         <div class="form-group row mt-4">
                             <div class="col-md-4">
-                                <button type="submit" class="btn btn-primary">{{ __(' أرسل ') }}</button>
+                                <button type="submit" class="btn btn-primary">{{ __('Send') }}</button>
                             </div>
                         </div>
 

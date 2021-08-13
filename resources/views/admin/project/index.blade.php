@@ -14,7 +14,7 @@
     <hr>
     <div class="row">
         <div class="col-md-12">
-            <table id="books-table" class="table table-stribed text-right" width="100%" cellspacing="0">
+            <table id="books-table" class="table table-stribed " width="100%" cellspacing="0">
                 <thead>
                     <tr>
                         <th>{{ __('عنوان المشروع') }}</th>

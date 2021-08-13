@@ -1942,9 +1942,9 @@ select {
 	-webkit-margin-start: 3rem;
 	        margin-inline-start: 3rem;
 }
-.me-auto {
-	-webkit-margin-end: auto;
-	        margin-inline-end: auto;
+.ms-auto {
+	-webkit-margin-start: auto;
+	        margin-inline-start: auto;
 }
 .-me-0 {
 	-webkit-margin-end: 0px;

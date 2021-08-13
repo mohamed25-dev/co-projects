@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>لوحة الإدارة - مكتبة حسوب</title>
+    <title>{{__('Control Panel')}}</title>
 
     <!-- Custom fonts for this template-->
     <link href="{!! asset('theme/vendor/fontawesome-free/css/all.min.css') !!}" rel="stylesheet" type="text/css">
@@ -39,7 +39,7 @@
     @yield('head')
 </head>
 
-<body id="page-top" dir="rtl" style="text-align: right">
+<body id="page-top" class="{{ $dir }}" >
 
     <!-- Page Wrapper -->
     <div id="wrapper">

@@ -13,9 +13,9 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item {{ request()->is('admin') ? 'active' : '' }}">
-        <a class="nav-link text-right" href="{{route('admin.index')}}">
+        <a class="nav-link {{$dir == 'rtl' ? 'text-right' : ''}}"  href="{{route('admin.index')}}" >
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>لوحة التحكم</span></a>
+          <span>{{__('Control Panel')}}</span></a>
       </li>
 
       <!-- Divider -->
@@ -23,17 +23,17 @@
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item {{ request()->is('admin/projects*') ? 'active' : '' }}">
-        <a class="nav-link text-right" href="{{route('admin.projects.index')}}">
+        <a class="nav-link {{$dir == 'rtl' ? 'text-right' : ''}}" href="{{route('admin.projects.index')}}">
         <i class="fas fa-folder"></i>
-          <span>{{__('المشاريع')}}</span>
+          <span>{{__('Projects')}}</span>
         </a>
       </li>
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item {{ request()->is('admin/newsletters*') ? 'active' : '' }}">
-        <a class="nav-link text-right" href="{{route('admin.newsletters.index')}}">
+        <a class="nav-link {{$dir == 'rtl' ? 'text-right' : ''}}" href="{{route('admin.newsletters.index')}}">
         <i class="fas fa-pen-fancy"></i>
-          <span>{{__('النشرة البريدية')}}</span>
+          <span>{{__('Newsletter')}}</span>
         </a>
       </li>
 

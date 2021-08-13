@@ -5,25 +5,25 @@
 @endsection
 
 @section('heading')
-    {{__('عرض النشرة البريدية')}}
+    {{__('Show Newsletter')}}
 @endsection
 
 
 @section('content')
-    <a class="btn btn-primary" href="{{ route('admin.newsletters.create') }}"><i class="fas fa-plus px-2"></i>{{__('إرسال نشرة بريدية جديدة')}}</a>
+    <a class="btn btn-primary" href="{{ route('admin.newsletters.create') }}"><i class="fas fa-plus px-2"></i>{{__('Send New Newsletter')}}</a>
     <hr>
     <div class="row">
         <div class="col-md-12">
-            <table id="books-table" class="table table-stribed text-right" width="100%" cellspacing="0">
+            <table id="books-table" class="table table-stribed " width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>{{ __('العنوان ') }}</th>
-                        <th>{{ __('النص ') }}</th>
-                        <th>{{ __('تاريخ الإرسال ') }}</th>
-                        <th>{{ __('الحالة ') }}</th>
-                        <th>{{ __('عرض ') }}</th>
-                        <th>{{ __('إعادة إرسال') }}</th>
-                        <th>{{ __('الغاء') }}</th>
+                        <th>{{ __('Title') }}</th>
+                        <th>{{ __('Text') }}</th>
+                        <th>{{ __('Send Date') }}</th>
+                        <th>{{ __('Status') }}</th>
+                        <th>{{ __('Show') }}</th>
+                        <th>{{ __('Resend') }}</th>
+                        <th>{{ __('Cancel') }}</th>
 
                     </tr>
                 </thead>

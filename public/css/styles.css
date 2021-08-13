@@ -39,3 +39,13 @@ input[type=file] + .input-title {
 ar-text {
   text-align: right !important;
 }
+
+.rtl {
+  text-align: right;
+  direction: rtl;
+}
+
+.ltr {
+  text-align: left;
+  direction: ltr;
+}

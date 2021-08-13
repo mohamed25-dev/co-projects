@@ -24,7 +24,7 @@
       <div class="dropdown-menu dropdown-menu-left shadow animated--grow-in" style="right:-90px">
         <a class="dropdown-item text-right" href="#" data-toggle="modal" data-target="#logoutModal">
           <i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>
-          تسجيل خروج
+          {{__('Logout')}}
         </a>
       </div>
     </li>

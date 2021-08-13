@@ -5,7 +5,7 @@
 @endsection
 
 @section('heading')
-    {{ __('عرض النشرات البريدية') }}
+    {{ __('Show Newsletter') }}
 @endsection
 
 
@@ -15,7 +15,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card">
-                        <div class="card-header">{{ __(' تفاصيل النشرة البريدية ') }}</div>
+                        <div class="card-header">{{ __('Newsletter Details') }}</div>
                         <div class="card-body">
                             <h4 class="card-title">{{ $newsletter->title }}</h4>
                             <p class="card-text">{{ Str::limit($newsletter->body, 60) }}</p>
