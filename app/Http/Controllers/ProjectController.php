@@ -68,7 +68,7 @@ class ProjectController extends Controller
         
         return redirect()->back()->with(
             'success',
-            ' أُضيف المشروع بنجاح'
+            __('Projected Created Successfully')
         );
     }
 
@@ -129,7 +129,7 @@ class ProjectController extends Controller
 
         return redirect()->back()->with(
             'success',
-            'عُدلت بيانات المشروع بنجاح'
+            __('Projects Details Edited Successfully')
         );
     }
 
@@ -144,7 +144,7 @@ class ProjectController extends Controller
         $project->delete();
         return redirect()->back()->with(
             'success',
-            '  حُذفت بيانات المشروع بنجاح'
+            __('Project Data Deleted Successfully')
         );
     }
 }

@@ -13,4 +13,14 @@ class Category extends Model
     {
         return $this->hasMany(Project::class);
     }
+
+    public function getNameAttribute ()
+    {
+        $lang = request()->session()->get('lang', 'ar');
+                
+        if ($lang == 'ar') {
+            return $this->ar_name;
+        } 
+        return $this->en_name;
+    }
 }

@@ -53,7 +53,7 @@ class NewsletterController extends Controller
         if ($runningBatch) {
             return redirect(route('admin.newsletters.index'))->with(
                 'error',
-                'كن صبوراًريثما ننهي إرسال النشرة السابقة '
+                __('Be Patient we have not finished sending the previous newsletter yet')
             );
         }
 
@@ -73,7 +73,7 @@ class NewsletterController extends Controller
         
         return redirect(route('admin.newsletters.index'))->with(
             'success',
-            'استرخ الآن سنعمل بجد لإيصال النشرة لكل مشتركينا'
+            'Take a rest while sending the news letter to our subscribers'
         );
     }
 

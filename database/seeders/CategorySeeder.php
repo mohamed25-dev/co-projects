@@ -15,23 +15,27 @@ class CategorySeeder extends Seeder
     public function run()
     {
         Category::create([
-            'name' => "تطبيقات ويب",
-             'slug' => "تطبيقات-ويب",
-         ]);
- 
-         Category::create([
-             'name' => "تطبيقات IOT",
-              'slug' => "تطبيقات-IOT",
-          ]);
- 
-          Category::create([
-             'name' => "تطبيقات أندرويد",
-              'slug' => "تطبيقات-أندرويد",
-          ]);
- 
-          Category::create([
-             'name' => "تطبيقات آيفون",
-              'slug' => "تطبيقات-آيفون",
-          ]);
+            'ar_name' => "تطبيقات ويب",
+            'en_name' => "Web Applications",
+            'slug' => "تطبيقات-ويب",
+        ]);
+
+        Category::create([
+            'ar_name' => "تطبيقات IOT",
+            'en_name' => "IOT Applications",
+            'slug' => "تطبيقات-IOT",
+        ]);
+
+        Category::create([
+            'ar_name' => "تطبيقات أندرويد",
+            'en_name' => "Android Applications",
+            'slug' => "تطبيقات-أندرويد",
+        ]);
+
+        Category::create([
+            'ar_name' => "تطبيقات IOT",
+            'en_name' => "IOS Applications",
+            'slug' => "تطبيقات-آيفون",
+        ]);
     }
 }

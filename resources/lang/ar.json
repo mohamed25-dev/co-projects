@@ -1,9 +1,13 @@
 {
     "The provided password does not match your current password.": "كلمة المرور التي قمت بإدخالها لا تطابق كلمة المرور الحالية.",
     "Welcome to our Family {$data['name']}": "Welcome to our Family {$data['name']}",
+    "Be Patient we have not finished sending the previous newsletter yet": "كن صبوراًريثما ننهي إرسال النشرة السابقة ",
+    "Projected Created Successfully": "أُضيف المشروع بنجاح",
+    "Projects Details Edited Successfully": "عُدلت بيانات المشروع بنجاح",
+    "Project Data Deleted Successfully": "حُذفت بيانات المشروع بنجاح",
     "Your are already a member of our family 😉 ": "أنت بالفعل فردٌ في عائلتنا 😉 ",
     "Welcome to our Family 😍 ": "أهلاً بك في عائلتنا😍 ",
-    "We are sad you are leaving us 😔": "We are sad you are leaving us 😔",
+    "We are sad you are leaving us 😔": "نحن حزينون لمغادرتك 😔",
     "Control Panel": "لوحة التحكم ",
     "Projects Number": "عدد المشاريع",
     "Number of Newsletter Subscribers": "عدد مشتركي النشرة",
@@ -34,7 +38,6 @@
     "Project Image": "صورة المشروع",
     "Pull the image Or Click to choose": "اسحب الصورة أو انقر للإختيار يدويا",
     "Project List": "عرض المشاريع",
-    " Add New Project": "إضافة مشروع جديد",
     "Delete": "حذف",
     "Project Details": "تفاصيل المشروع",
     "Create API Token": "إنشاء رمز API",
@@ -126,6 +129,8 @@
     "Saved.": "تم الحفظ.",
     "Profile Information": "معلومات الملف الشخصي",
     "Update your account\\'s profile information and email address.": "Update your account\\'s profile information and email address.",
+    "  Project Details ": " تفاصيل المشروع ",
+    "  Project Link ": " رابط المشروع ",
     "Logout": "تسجيل خروج",
     "Projects": "المشاريع",
     "Newsletter": "النشرة البريدية",
